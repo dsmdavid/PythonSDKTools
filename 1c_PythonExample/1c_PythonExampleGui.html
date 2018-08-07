@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html style="padding:20px">
+<head>
+  <meta charset="utf-8">
+  <title>1a_PythonExample</title>
+
+  <script type="text/javascript">
+    document.write('<link rel="import" href="' + window.Alteryx.LibDir + '2/lib/includes.html">');
+  </script>
+</head>
+<body>
+	<form>
+    <fieldset>
+        <legend>XMSG("1_PythonExample")</legend>
+        <div>
+            <h2>XMSG("Number of Rows")</h2>
+                <ayx data-ui-props='{type:"TextBox", widgetId:"NumberRows"}'></ayx>
+            <h2>XMSG("Number of columns")</h2>
+                <label>(Min: 1, Max: 20, Step: 1)</label>
+                <ayx data-ui-props="{type:'NumericSpinner', widgetId:'NumberColumns'}" data-item-props = "{dataName: 'NColumns'}"></ayx>
+            <h2>XMSG("Free text to fill the cells with")</h2>
+                <ayx data-ui-props='{type:"TextBox", widgetId:"FreeText"}'></ayx>
+        </div>
+    </fieldset>
+	</form>
+
+  <style>
+    /*This styling needs to be here. Is due to file loading. Otherwise, will not get proper styling on dropdowns*/
+
+    .Select, .Select div, .Select input, .Select span {
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+    }
+  </style>
+        <script type="text/javascript">
+
+        Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems, json) {
+            
+        // TextBox
+        // -------
+        // Create string data item
+        var textBoxDataItem = new AlteryxDataItems.SimpleString('NRows')
+        manager.addDataItem(textBoxDataItem)
+        // Bind to TextBox widget
+        manager.bindDataItemToWidget(textBoxDataItem, 'NumberRows')
+            
+                
+        // Create string data item
+        var textBoxDataItem = new AlteryxDataItems.SimpleString('FText')
+        manager.addDataItem(textBoxDataItem)
+        // Bind to TextBox widget
+        manager.bindDataItemToWidget(textBoxDataItem, 'FreeText')
+
+
+        // NumericSpinner
+        // Create constrained Int item
+        const constrainedNumberDataItem = new AlteryxDataItems.ConstrainedInt('NColumns', {
+            max: 20,
+            min: 1,
+            step: 1
+        })
+        manager.addDataItem(constrainedNumberDataItem)
+        // Bind to NumericSpinner widget
+        manager.bindDataItemToWidget(constrainedNumberDataItem, 'NumberColumns')
+
+        }
+    </script>
+</body>
+</html>

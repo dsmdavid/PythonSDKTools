@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html style="padding:20px">
+<head>
+  <meta charset="utf-8">
+  <title>1a_PythonExample</title>
+
+  <script type="text/javascript">
+    document.write('<link rel="import" href="' + window.Alteryx.LibDir + '2/lib/includes.html">');
+  </script>
+</head>
+<body>
+	<form>
+    <fieldset>
+        <legend>XMSG("1a_PythonExample")</legend>
+        <div>
+        <label>XMSG("This tool requires a single Constrained Numeric Spinner (Min: 1, Max: 20, Step: 1)")</label>
+        <ayx data-ui-props="{type:'NumericSpinner', widgetId:'NumberColumns'}" data-item-props = "{dataName: 'NColumns'}"></ayx>
+        </div>
+    </fieldset>
+	</form>
+
+  <style>
+    /*This styling needs to be here. Is due to file loading. Otherwise, will not get proper styling on dropdowns*/
+
+    .Select, .Select div, .Select input, .Select span {
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+    }
+  </style>
+        <script type="text/javascript">
+
+        Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems, json) {
+
+        // NumericSpinner
+        // Create constrained Int item
+        const constrainedNumberDataItem = new AlteryxDataItems.ConstrainedInt('NColumns', {
+            max: 20,
+            min: 1,
+            step: 1
+        })
+        manager.addDataItem(constrainedNumberDataItem)
+        // Bind to NumericSpinner widget
+        manager.bindDataItemToWidget(constrainedNumberDataItem, 'NumberColumns')
+
+        }
+    </script>
+</body>
+</html>

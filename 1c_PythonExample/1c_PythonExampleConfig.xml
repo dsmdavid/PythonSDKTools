@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+  The name of this file must be the name of the plugin folder + "Config"
+-->
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDll="Python" EngineDllEntryPoint="1c_PythonExampleEngine.py" SDKVersion="10.1" />
+  <GuiSettings Html="1c_PythonExampleGui.html" Icon="1c_PythonExampleIcon.png" Help="https://www.theinformationlab.co.uk/2018/08/07/adding-complexity-alteryx-pythonsdk/" SDKVersion="10.1">
+    <InputConnections>
+    </InputConnections>
+    <OutputConnections>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+      <Name>1_PythonExample</Name>
+      <Description>Tool with no input whose output is M rows with N columns saying a text defined by the user. This example tool was created using the Python SDK and the HTML GUI SDK.</Description>
+      <CategoryName>Laboratory</CategoryName>
+      <ToolVersion>1.c</ToolVersion>
+      <Author>DavidSM</Author>
+      <Company>The Information Lab</Company>
+      <Copyright>2018</Copyright>
+      <SearchTags>python, sdk, python sdk, input, sample, infolab</SearchTags>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>
