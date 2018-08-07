@@ -1,6 +1,6 @@
 # PythonSDKTools
-# David Sanchez - dsmdavid@gmail.com
-# The Information Lab
+### David Sanchez - dsmdavid@gmail.com
+### The Information Lab
 
 Getting to know the Alteryx Python SDK Module
 
