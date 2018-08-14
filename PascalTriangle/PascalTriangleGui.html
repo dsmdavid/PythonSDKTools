@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="padding:20px">
+<head>
+  <meta charset="utf-8">
+  <title>Pascal's Triangle</title>
+
+  <script type="text/javascript">
+    document.write('<link rel="import" href="' + window.Alteryx.LibDir + '2/lib/includes.html">');
+  </script>
+</head>
+<body>
+	<form>
+    <fieldset>
+        <legend>XMSG("Pascal's Triangle")</legend>
+        <div>
+            <h2>XMSG("Number of Rows")</h2>
+                <ayx data-ui-props='{type:"TextBox", widgetId:"NumberRows"}'></ayx>
+        </div>
+    </fieldset>
+	</form>
+
+  <style>
+    /*This styling needs to be here. Is due to file loading. Otherwise, will not get proper styling on dropdowns*/
+
+    .Select, .Select div, .Select input, .Select span {
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+    }
+  </style>
+        <script type="text/javascript">
+
+        Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems, json) {
+            
+        // TextBox
+        // -------
+        // Create string data item
+        var textBoxDataItem = new AlteryxDataItems.SimpleString('NRows')
+        manager.addDataItem(textBoxDataItem)
+        // Bind to TextBox widget
+        manager.bindDataItemToWidget(textBoxDataItem, 'NumberRows')
+            
+
+        }
+    </script>
+</body>
+</html>
