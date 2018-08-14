@@ -4,7 +4,7 @@
 -->
 <AlteryxJavaScriptPlugin>
   <EngineSettings EngineDll="Python" EngineDllEntryPoint="PascalTriangleEngine.py" SDKVersion="10.1" />
-  <GuiSettings Html="PascalTriangleGui.html" Icon="PascalTriangleIcon.png" Help="https://www.theinformationlab.co.uk/2018/08/07/adding-complexity-alteryx-pythonsdk/" SDKVersion="10.1">
+  <GuiSettings Html="PascalTriangleGui.html" Icon="PascalTriangleIcon.png" Help="https://dsmdaviz.com/2018/08/pascal-triangle-alteryx-python-sdk/" SDKVersion="10.1">
     <InputConnections>
     </InputConnections>
     <OutputConnections>
