@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html style="padding:20px">
+<head>
+  <meta charset="utf-8">
+  <title>Plinko Test</title>
+
+  <script type="text/javascript">
+    document.write('<link rel="import" href="' + window.Alteryx.LibDir + '2/lib/includes.html">');
+  </script>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend class='blueTitle'>XMSG("Plinko Probs")</legend>
+      <div class='leftCon'>
+        <label>XMSG("Number of Slots")</label>
+           <ayx     data-ui-props="{'type':'NumericSpinner','widgetId':'n1','value':0,'max':10,'min':0,'step':1,'allowedPrecision':0}"
+      data-item-props="{'dataName':'NumberSlots','suppressed':false,'option':{'label':'Option Label','value':'value1'},'hidden':false,'disabled':false,'min':0,'max':10,'step':1}" </ayx>
+        <label>XMSG("Number of Rows")</label>
+            <ayx     data-ui-props="{'type':'NumericSpinner','widgetId':'n2','value':0,'max':50,'min':0,'step':1,'allowedPrecision':0}"
+      data-item-props="{'dataName':'NumberRows','suppressed':false,'option':{'label':'Option Label','value':'value1'},'hidden':false,'disabled':false,'min':0,'max':50,'step':1}" </ayx>
+        <label>XMSG("Starting Position")</label>
+            <ayx     data-ui-props="{'type':'NumericSpinner','widgetId':'n3','value':0,'max':10,'min':0,'step':1,'allowedPrecision':0}"
+      data-item-props="{'dataName':'StartingPos','suppressed':false,'option':{'label':'Option Label','value':'value1'},'hidden':false,'disabled':false,'min':0,'max':10,'step':1}" </ayx>
+      </div>
+    </fieldset>
+  </form>
+
+  <style>
+    .blueTitle {
+      background-color: #e5e5e5;
+    }
+  </style>
+</body>
+</html>

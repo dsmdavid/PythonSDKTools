@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDll="Python" EngineDllEntryPoint="PlinkoSDKEngine.py" SDKVersion="10.1" />
+  <GuiSettings Html="PlinkoSDKGui.html" Icon="PlinkoSDKIcon.png" Help="https://dsmdaviz.com/2018/10/plinko-stats/" SDKVersion="10.1">
+    <OutputConnections>
+      <Connection Name="DataFrame" AllowMultiple="False" Optional="False" Type="Connection" Label="D"/>
+      <Connection Name="LastRow" AllowMultiple="False" Optional="False" Type="Connection" Label="R"/>
+    </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+      <Name>Plinko SDK</Name>
+      <Description>Return the dataframe of the probabilities in a plinko game, as well as the last row.</Description>
+      <CategoryName>SDK Examples</CategoryName>
+      <SearchTags>python, sdk, plinko, probability, python sdk, optional input</SearchTags>
+      <ToolVersion>1.0</ToolVersion>
+      <Author>DavidSM</Author>
+      <Company>The Information Lab</Company>
+      <Copyright>2018</Copyright>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>
