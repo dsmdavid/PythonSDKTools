@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+  <EngineSettings SDKVersion="10.1" EngineDllEntryPoint="swarmplotEngine.py" EngineDll="Python"/>
+  <GuiSettings SDKVersion="10.1" Icon="swarmplotIcon.png" Help="https://dsmdaviz.com/2018/11/beeswarm-plot-in-alteryx/" Html="swarmplotGui.html">
+      <InputConnections>
+        <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
+	  </InputConnections>
+      <OutputConnections>
+        <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label="O"/>
+      </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+	  <ToolVersion>1.2</ToolVersion>
+      <Author>DavidSM</Author>
+      <Name>BeeSwarm</Name>
+      <CategoryName>Laboratory</CategoryName>
+	  <Description>Create jittered plots using seaborn.swarmplot. Overlay boxplots or violinplots</Description>
+      <SearchTags>Python, SDK, swarmplot, jitter, plot</SearchTags>
+      <DescriptionLink actual="" display=""/>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>

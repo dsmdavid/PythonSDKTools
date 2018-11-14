@@ -1,0 +1,105 @@
+<html>
+ <head>
+             <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <title>BEESWARM</title>
+   <script>
+      window.ayx = window.ayx || {}; document.write(`<link
+        rel="import"
+        href="${window.Alteryx.LibDir}2/lib/includes.html"
+      />`);
+    </script>
+    <link rel="stylesheet" type="text/css" href="tool.css" />
+ </head>
+    <body style="visibility: visible;background: #3996d2;">
+        
+        <div style="
+    color: white;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    font-family: Montserrat, Helvetica, sans-serif; align-content: center">
+    <img style="width:100px; height:60px; align-content: right; padding: 0 0 0 0" src="https://dsmdaviz.com/wp-content/uploads/2018/11/bee-icon-w.png"><span>The BeeSwarm</span>
+            </div>
+ <hr noshade color="white">
+<div>
+<section style="color: white;font-weight: 300; padding: 2em 2em 2em 0">
+    <label style="font-family: Montserrat, Helvetica, sans-serif; ">This tool expects a wide dataframe with numerical variables to plot, a key categorical column and may or may not receive a categorical column with the color.
+    Expect a swarmplot blob as the output (use Image tool to render).</label>                        </section>
+        
+<section style="padding: 1em 0 0.5em 0">
+    <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-weight: bolder;padding: 0 2em 1em 0">Select Numeric Variables</label>
+    <ayx
+      data-ui-props="{'type':'ListBox','widgetId':'fieldList',heightAuto: true, searchable: false}"
+      data-item-props="{'dataName':'FieldSelectMulti', dataType: 'FieldSelectorMulti', fieldType: 'Numeric', anchorIndex:'0', connectionIndex:'0'}">
+    </ayx>
+       </section>
+<div style="width: 100%;">
+   <div style="float:left; width: 40%">
+       
+        <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-weight: bolder;padding: 1em 2em 0 0">XMSG("Select Categorical Variables")</label><ayx data-ui-props="{type: 'DropDown'}" data-item-props="{dataName: 'DataField', dataType: 'FieldSelector', fieldType: 'String', anchorIndex:'0', connectionIndex:'0'}"></ayx>
+    
+        <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-weight: bolder;">XMSG("Select Column Containing color (optional)")</label><ayx data-ui-props="{type: 'DropDown'}" data-item-props="{dataName: 'ColorField', dataType: 'FieldSelector', fieldType: 'String', anchorIndex:'0', connectionIndex:'0'}"></ayx>
+        <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-weight: bolder;">XMSG("Select Overlay (optional)")</label>
+       <ayx 
+            data-ui-props='{type:"DropDown", widgetId:"DropDown1"}'></ayx>
+       
+    </div>
+    <div style="float:right; width: 50%;text-align:center">
+        <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-weight: bolder;padding: 1em 0em 0 0">XMSG("Select Optional Settings")</label>
+        <div style="background:white; border-radius: 15px;
+    border: 2px solid midnightblue;
+    padding: 10px; ">
+        <ayx data-ui-props='{type:"CheckBox", widgetId:"CheckBoxDespine", label:"XMSG("Not Despine?")"}' 
+             data-item-props="{dataName: 'CheckBoxDespine', dataType: 'SimpleBool'}"></ayx>
+        <ayx data-ui-props='{type:"CheckBox", widgetId:"CheckBoxLegend", label:"XMSG("Hide Legend?")"}' 
+             data-item-props="{dataName: 'CheckBoxLegend', dataType: 'SimpleBool'}"></ayx>
+        <ayx data-ui-props='{type:"CheckBox", widgetId:"CheckBoxTrim", label:"XMSG("Avoid Trimming Axes")"}'
+             data-item-props="{dataName: 'CheckBoxTrim', dataType: 'SimpleBool'}"></ayx>
+</div>
+</div>
+    </div>
+<div style="clear:both">
+<section style="color: white;font-weight: 300; padding: 1em 0 0 0">
+<hr color="white">
+    <label style="color: white;font-family: Montserrat, Helvetica, sans-serif; font-size:16 ; font-weight: bolder;">XMSG("Don't forget to add an Image tool to render from Blob!!!")</label></section>
+
+            </div>
+    </div>
+    <script>
+           Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems, json) {
+           var stringSelector = new AlteryxDataItems.StringSelector('DropDownOverlay1', {
+               optionList: [
+                   {label: 'XMSG("Nothing")', value: "nothing"},
+                   {label: 'XMSG("Violin Plot")', value: "violin"},
+                   {label: 'XMSG("Box Plot")', value: "boxplot"}
+               ]
+           })
+           manager.addDataItem(stringSelector)
+           manager.bindDataItemToWidget(stringSelector, 'DropDown1')
+       }
+       Alteryx.Gui.AfterLoad = function (manager, AlteryxDataItems) {
+      const DropDownOverlay = manager.getDataItem('DropDownOverlay1')
+      }
+
+        // Bind to widget
+      // window.Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems,
+      // window.Alteryx.Gui.AfterLoad = function (manager, AlteryxDataItems){}
+      // Alteryx.Gui.BeforeGetConfiguration = function (json){}
+      // window.Alteryx.Gui.Annotation = function (manager){}
+    </script>
+    <style type="text/css">
+    
+        
+        .alteryx-checkbox-label {
+    width: auto !important;
+    min-width: auto;
+    padding: 0 8px;
+    cursor: pointer;
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: black;
+}
+        </style>
+ </body>
+</html>
